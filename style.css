@@ -1,0 +1,204 @@
+/* style.css
+   Styles for Infinity Ladder Technologies static site.
+   - Neutral palette with blue accent
+   - Responsive layout and utility classes
+   - Well-commented for customization
+*/
+
+/* ========== Variables ========== */
+:root{
+  --bg: #0f1720;             /* deep background for accent use */
+  --surface: #ffffff;        /* primary surface */
+  --muted: #f6f8fa;          /* light section background */
+  --text: #0f1720;           /* primary text */
+  --muted-text: #4b5563;     /* secondary text */
+  --accent: #0a74ff;         /* modern blue accent */
+  --accent-2: #0bb79d;       /* alternate accent (teal) */
+  --radius: 10px;
+  --max-width: 1100px;
+  --container-padding: 1.25rem;
+  --shadow: 0 6px 20px rgba(16,24,40,0.08);
+  --glass: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+}
+
+/* ========== Reset & Base ========== */
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;height:100%;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+a{color:var(--accent); text-decoration:none}
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding: 2rem var(--container-padding);
+}
+
+/* ========== Header / Nav ========== */
+.site-header{
+  background: rgba(255,255,255,0.9);
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(15,23,36,0.05);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  justify-content:space-between;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+}
+.logo{width:44px;height:44px}
+.brand-name{
+  font-weight:700;
+  color:var(--text);
+}
+
+/* Nav */
+.nav{display:block}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
+.nav-link{
+  padding:.5rem .75rem;
+  border-radius:8px;
+  color:var(--muted-text);
+  font-weight:600;
+}
+.nav-link:hover{background:rgba(10,116,255,0.08); color:var(--accent)}
+.nav-link.cta{
+  background:var(--accent);
+  color:white;
+  box-shadow:var(--shadow);
+}
+.nav-link.cta:hover{filter:brightness(.95)}
+
+/* Mobile nav toggle */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:0;
+  padding:.4rem;
+  border-radius:8px;
+}
+.hamburger{display:block; width:26px;height:2px;background:var(--text);position:relative}
+.hamburger::before,.hamburger::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--text)}
+.hamburger::before{top:-7px}
+.hamburger::after{bottom:-7px}
+
+/* ========== Hero ========== */
+.hero-section{padding:3.5rem 0}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 480px;
+  gap:2rem;
+  align-items:center;
+}
+.hero-title{
+  font-size:clamp(1.6rem, 3vw, 2.4rem);
+  margin:0 0 .5rem 0;
+  line-height:1.05;
+}
+.hero-sub{margin:0 0 1rem 0;color:var(--muted-text);max-width:52ch}
+.hero-ctas{display:flex;gap:.75rem;margin-bottom:1rem}
+.btn{
+  display:inline-block;
+  padding:.65rem .9rem;
+  border-radius:9px;
+  font-weight:700;
+  text-align:center;
+}
+.btn-primary{
+  background:var(--accent);
+  color:white;
+  box-shadow:var(--shadow);
+}
+.btn-outline{
+  border:1px solid rgba(15,23,36,0.06);
+  background:white;
+  color:var(--text);
+}
+
+/* trust list */
+.trust-list{display:flex;gap:.75rem;margin-top:1.25rem;list-style:none;padding:0;color:var(--muted-text)}
+.hero-media img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+
+/* ========== Sections ========== */
+.section{padding:3rem 0}
+.bg-muted{background:var(--muted)}
+.section-header{margin-bottom:1.5rem}
+.section-header h2{margin:0 0 .25rem 0}
+.lead{color:var(--muted-text);margin:0}
+
+/* About layout */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start}
+.areas-list{list-style:none;padding:0;margin:0;color:var(--muted-text)}
+.areas-list li{padding:.5rem 0;border-bottom:1px dashed rgba(15,23,36,0.04)}
+
+/* Services cards */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:white;padding:1.25rem;border-radius:12px;box-shadow:var(--shadow);min-height:120px}
+.card h4{margin:0 0 .5rem 0}
+
+/* Research */
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.research-card{background:white;padding:1rem;border-radius:10px;border:1px solid rgba(15,23,36,0.035)}
+.research-card .meta{color:var(--muted-text);font-size:.9rem;margin:0 .0 .5rem 0}
+
+/* Contact layout */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+.contact-form form{background:white;padding:1.25rem;border-radius:12px;box-shadow:var(--shadow)}
+.contact-form label{display:block;margin-top:.5rem;font-weight:600}
+.contact-form input,
+.contact-form textarea{
+  width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(15,23,36,0.06);margin-top:.4rem;
+  font-size:1rem;
+}
+.form-actions{display:flex;gap:.5rem;margin-top:1rem}
+
+/* Footer */
+.site-footer{padding:1.25rem 0;border-top:1px solid rgba(15,23,36,0.04);background:transparent}
+.footer-inner{display:flex;justify-content:space-between;gap:1rem;align-items:center;color:var(--muted-text);font-size:.95rem}
+
+/* ========== Responsive ========== */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .research-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:720px){
+  .header-inner{padding:0}
+  .nav{display:none}
+  .nav-toggle{display:inline-flex}
+  .hero-grid{grid-template-columns:1fr;gap:1.25rem;text-align:left}
+  .hero-media{order: -1} /* move image above on narrow screens */
+  .about-grid{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* Mobile nav visible class controlled by JS */
+.nav.open{display:block; background:white; position:absolute; right:1.25rem; top:64px; padding:1rem; border-radius:12px; box-shadow:var(--shadow)}
+.nav.open .nav-list{flex-direction:column; gap:.5rem}
+
+/* Small utilities */
+.bg-accent-very-light{background:linear-gradient(180deg, rgba(10,116,255,0.04), rgba(11,183,157,0.02))}
+.meta{font-size:.9rem;color:var(--muted-text)}

@@ -1,0 +1,27 @@
+DEPLOYMENT_NOTES.txt
+
+How to deploy to GitHub Pages:
+1. Create a repository named "infinityladdertechnologies.github.io" under the 'infinityladder' user/organization
+   (you already indicated this repo name). Push all files at the repository root.
+
+2. GitHub Pages setup:
+   - For user/organization pages, the default branch (main) will be used if repo is named <username>.github.io.
+   - No additional configuration is required for a static site.
+
+3. Optional enhancements:
+   - Replace the placeholder contact form with a form provider (Formspree, Netlify Forms, etc.)
+   - Add analytics, sitemap.xml, robots.txt as needed.
+   - Replace placeholder links (socials, publications) with real targets.
+
+Files included:
+- index.html
+- style.css
+- script.js
+- images/logo.svg
+- images/hero-placeholder.svg
+- images/README.txt
+
+Customization tips:
+- Change primary accent in style.css: --accent
+- Update meta tags and Open Graph tags in index.html
+- Replace SVGs in /images with branded artwork

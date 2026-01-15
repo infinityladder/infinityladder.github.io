@@ -1,0 +1,273 @@
+<!doctype html>
+<!--
+  Infinity Ladder Technologies - Static site (index.html)
+  Ready for GitHub Pages (place in repository root).
+  - Responsive, modern, tech-focused single-page layout with sections:
+    Home, About, Services, Research, Contact
+  - Uses /style.css and /script.js
+  - Placeholder images in /images/
+  - Well-commented for customization
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Infinity Ladder Technologies — Building the future of AI and systems engineering</title>
+  <meta name="description" content="Infinity Ladder Technologies specializes in Software Engineering, AI, Research, Databases, and System Architecture. Building scalable systems and cutting-edge AI research." />
+  <!-- Open Graph for better link previews -->
+  <meta property="og:title" content="Infinity Ladder Technologies" />
+  <meta property="og:description" content="Building the future of AI and systems engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero-placeholder.svg" />
+  <meta name="theme-color" content="#0a74ff" />
+
+  <!-- Favicon (uses simple inline SVG data URI as fallback) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a74ff' width='100' height='100'/><text x='50' y='60' font-size='50' text-anchor='middle' fill='white'>∞</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Preload critical images -->
+  <link rel="preload" href="images/hero-placeholder.svg" as="image" />
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Infinity Ladder Technologies">
+        <!-- SVG logo file in /images/logo.svg -->
+        <img src="images/logo.svg" alt="Infinity Ladder Technologies logo" class="logo" />
+        <span class="brand-name">Infinity Ladder</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="mainNav" class="nav">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#research" class="nav-link">Research</a></li>
+          <li><a href="#contact" class="nav-link cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content: single-page sections -->
+  <main id="main">
+    <!-- Hero / Home -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">Building the future of AI and systems engineering.</h1>
+          <p class="hero-sub">
+            Infinity Ladder Technologies designs scalable software, builds production-ready AI systems,
+            and advances research in databases and system architecture.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-outline" href="#services">Our Expertise</a>
+          </div>
+
+          <ul class="trust-list" aria-hidden="true">
+            <li><strong>Software Engineering</strong></li>
+            <li><strong>AI Research</strong></li>
+            <li><strong>Databases & Architecture</strong></li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <!-- Illustration placeholder (SVG) -->
+          <img src="images/hero-placeholder.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Infinity Ladder Technologies</h2>
+          <p class="lead">Mission, vision, and core focus areas driving innovation and reliable systems.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Our Mission</h3>
+            <p>
+              To empower organizations with robust software and intelligent systems that scale securely and responsibly.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+              A future where AI and architecture are thoughtfully integrated to deliver resilient, explainable, and efficient systems.
+            </p>
+          </div>
+
+          <div class="about-areas">
+            <h3>Core Areas</h3>
+            <ul class="areas-list">
+              <li><strong>Software Engineering</strong> — robust design, CI/CD, testing, and observability.</li>
+              <li><strong>AI</strong> — applied machine learning, model deployment, and MLOps.</li>
+              <li><strong>Research</strong> — reproducible experiments and publications.</li>
+              <li><strong>Databases</strong> — storage, indexing, and high-performance data systems.</li>
+              <li><strong>Architecture</strong> — distributed systems, reliability, and security.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Expertise -->
+    <section id="services" class="section bg-muted">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services & Expertise</h2>
+          <p class="lead">Practical services to turn ideas into production systems.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h4>Systems Design & Architecture</h4>
+            <p>Designing fault-tolerant, scalable architectures for mission-critical systems.</p>
+          </article>
+
+          <article class="card">
+            <h4>AI & Machine Learning</h4>
+            <p>Model development, evaluation, and deployment with production-grade monitoring.</p>
+          </article>
+
+          <article class="card">
+            <h4>Databases & Data Engineering</h4>
+            <p>Schema design, performance tuning, data pipelines, and analytics platforms.</p>
+          </article>
+
+          <article class="card">
+            <h4>Research & Prototyping</h4>
+            <p>Rapid prototyping and empirically-driven research for new algorithms and systems.</p>
+          </article>
+
+          <article class="card">
+            <h4>DevOps & Site Reliability</h4>
+            <p>CI/CD, infrastructure-as-code, observability, and SLO-driven operations.</p>
+          </article>
+
+          <article class="card">
+            <h4>Consulting & Workshops</h4>
+            <p>Strategic consulting and technical workshops tailored to engineering teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research / Publications -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Research & Publications</h2>
+          <p class="lead">Selected projects and papers exploring AI and systems topics.</p>
+        </div>
+
+        <div class="research-grid">
+          <!-- Repeatable research card -->
+          <article class="research-card">
+            <h4>Scalable Model Serving for Low-latency AI</h4>
+            <p class="meta">2025 — Systems & ML</p>
+            <p>Overview: Techniques for horizontally scaling model serving with low tail latency and resource efficiency.</p>
+            <p class="links">
+              <a href="#" aria-label="Read paper">Read paper</a> •
+              <a href="#" aria-label="Repository">Repository</a>
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h4>Consistency Models for Distributed Databases</h4>
+            <p class="meta">2024 — Databases</p>
+            <p>Overview: Evaluating trade-offs between consistency, latency, and throughput in geo-distributed systems.</p>
+            <p class="links">
+              <a href="#" aria-label="Read paper">Read paper</a> •
+              <a href="#" aria-label="Repository">Repository</a>
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h4>Interpretable Representations in ML Systems</h4>
+            <p class="meta">2024 — AI</p>
+            <p>Overview: Methods to extract interpretable features from deep models to aid debugging and compliance.</p>
+            <p class="links">
+              <a href="#" aria-label="Read paper">Read paper</a> •
+              <a href="#" aria-label="Repository">Repository</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section bg-accent-very-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p class="lead">Let's discuss your project or research collaboration.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-form">
+            <!-- Static form placeholder: GitHub Pages cannot process forms natively.
+                 Integrate with a form service (Formspree, Netlify Forms) or backend later. -->
+            <form id="contactForm" action="#" method="post" onsubmit="alert('This is a static placeholder. Integrate with a form service to submit.'); return false;">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send message</button>
+                <button type="reset" class="btn btn-outline">Reset</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="contact-info" aria-labelledby="contact-info-title">
+            <h3 id="contact-info-title">Other ways to reach us</h3>
+            <p>Email: <a href="mailto:hello@infinityladder.com">hello@infinityladder.com</a></p>
+            <p>GitHub: <a href="https://github.com/infinityladder/infinityladdertechnologies.github.io" target="_blank" rel="noopener">github.com/infinityladder/infinityladdertechnologies.github.io</a></p>
+
+            <div class="socials">
+              <a href="#" aria-label="LinkedIn">LinkedIn</a>
+              <a href="#" aria-label="Twitter">Twitter</a>
+              <a href="#" aria-label="GitHub">GitHub</a>
+            </div>
+
+            <p class="privacy-note">
+              We respect your privacy. This site is static and does not collect data without your consent.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Infinity Ladder Technologies — All rights reserved.</p>
+      <p>
+        <a href="https://github.com/infinityladder/infinityladdertechnologies.github.io" target="_blank" rel="noopener">Repository on GitHub</a>
+        • <a href="#privacy">Privacy</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for interactivity (script.js). If JS disabled, site remains usable. -->
+  <script src="script.js"></script>
+</body>
+</html>

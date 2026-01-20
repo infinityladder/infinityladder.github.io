@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<div class="container post-layout">
+  <article class="post-article">
+    <header class="post-hero">
+      <p class="eyebrow">Insight</p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">
+        <span>{{ page.date | date: "%b %d, %Y" }}</span>
+        {% if page.tags %}
+        <span class="post-tags">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </p>
+      {% if page.featured_image %}
+      <div class="post-featured">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.featured_alt | default: page.title }}">
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </article>
+
+  <aside class="post-aside">
+    <div class="aside-card">
+      <h2>Recent posts</h2>
+      <div class="recent-posts">
+        {% for post in site.posts limit:3 %}
+        <a class="recent-card" href="{{ post.url | relative_url }}">
+          {% if post.featured_image %}
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.featured_alt | default: post.title }}">
+          {% endif %}
+          <div>
+            <p class="recent-title">{{ post.title }}</p>
+            <p class="recent-date">{{ post.date | date: "%b %d, %Y" }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </aside>
+</div>

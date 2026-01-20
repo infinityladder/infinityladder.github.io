@@ -1,0 +1,24 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract connections">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="55%" stop-color="#1f2a44"/>
+      <stop offset="100%" stop-color="#0f6b6b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7cf7f2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cf7f2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="220" cy="170" r="110" fill="rgba(124, 247, 242, 0.18)"/>
+  <circle cx="980" cy="140" r="150" fill="rgba(124, 247, 242, 0.12)"/>
+  <circle cx="820" cy="520" r="190" fill="rgba(69, 212, 200, 0.12)"/>
+  <path d="M140 500 C320 420, 360 320, 520 300 C660 280, 760 360, 900 340 C1020 320, 1060 260, 1140 220" stroke="rgba(124, 247, 242, 0.35)" stroke-width="4" fill="none"/>
+  <path d="M80 260 C220 220, 320 200, 430 260 C520 310, 620 420, 760 430 C900 440, 1040 380, 1120 320" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" fill="none"/>
+  <path d="M260 120 L340 210 L260 300 L180 210 Z" fill="rgba(255, 255, 255, 0.14)"/>
+  <path d="M690 180 L760 280 L690 380 L620 280 Z" fill="rgba(255, 255, 255, 0.12)"/>
+  <path d="M920 400 L1010 460 L920 520 L830 460 Z" fill="rgba(255, 255, 255, 0.12)"/>
+  <path d="M240 480 L340 520 L300 640 L200 600 Z" fill="rgba(255, 255, 255, 0.16)"/>
+  <path d="M0 620 L1200 500" stroke="url(#glow)" stroke-width="120" opacity="0.15"/>
+</svg>

@@ -1,73 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infinity Ladder Technologies</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-row">
-      <a class="logo" href="index.html">Infinity Ladder Technologies</a>
-      <nav class="nav">
-        <a class="nav-link active" href="index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
-      </nav>
+---
+layout: default
+title: Home
+description: Software development and consulting for HRIS, analytics, and scalable systems.
+---
+<div class="container">
+  <section class="hero">
+    <p class="eyebrow reveal">Software development + consulting</p>
+    <h1 class="reveal">Build systems that scale, connect, and stay human.</h1>
+    <p class="lead reveal">
+      Infinity Ladder Technologies delivers product engineering and advisory for teams
+      modernizing HRIS workflows, data analytics pipelines, and database management.
+    </p>
+    <div class="hero-actions reveal">
+      <a class="button" href="#services">Explore our services</a>
+      <a class="button ghost" href="{{ '/about/' | relative_url }}">Our story</a>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <section class="hero">
-      <p class="eyebrow reveal">Software development + consulting</p>
-      <h1 class="reveal">Build systems that scale, connect, and stay human.</h1>
-      <p class="lead reveal">
-        Infinity Ladder Technologies delivers product engineering and advisory for teams
-        modernizing HRIS workflows, data analytics pipelines, and database management.
-      </p>
-      <div class="hero-actions reveal">
-        <a class="button" href="#services">Explore our services</a>
-        <a class="button ghost" href="about.html">Our story</a>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div class="section-head reveal">
-        <h2>What we do</h2>
-        <p>Focused expertise with hands-on delivery.</p>
-      </div>
-      <div class="service-grid">
-        <article class="card reveal">
-          <h3>Software Development</h3>
-          <p>Product strategy, architecture, and implementation across web and data platforms.</p>
-        </article>
-        <article class="card reveal">
-          <h3>HRIS Consulting</h3>
-          <p>Process mapping, system selection, and integrations that keep people data clean.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Data Analytics</h3>
-          <p>Dashboards, reporting, and analytics operations designed for clarity and action.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Database Management</h3>
-          <p>Performance tuning, migrations, and governance for critical operational data.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <p>Infinity Ladder Technologies</p>
-      <p>Software development and consulting</p>
+  <section id="services" class="services">
+    <div class="section-head reveal">
+      <h2>What we do</h2>
+      <p>Focused expertise with hands-on delivery.</p>
     </div>
-  </footer>
-</body>
-</html>
+    <div class="service-grid">
+      <article class="card reveal">
+        <h3>Software Development</h3>
+        <p>Product strategy, architecture, and implementation across web and data platforms.</p>
+      </article>
+      <article class="card reveal">
+        <h3>HRIS Consulting</h3>
+        <p>Process mapping, system selection, and integrations that keep people data clean.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Data Analytics</h3>
+        <p>Dashboards, reporting, and analytics operations designed for clarity and action.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Database Management</h3>
+        <p>Performance tuning, migrations, and governance for critical operational data.</p>
+      </article>
+    </div>
+  </section>
+</div>

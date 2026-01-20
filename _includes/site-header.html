@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="nav">
+      <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+      <a class="nav-link {% if page.url contains '/about' %}active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="nav-link {% if page.layout == 'post' or page.url contains '/posts' %}active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
+    </nav>
+  </div>
+</header>

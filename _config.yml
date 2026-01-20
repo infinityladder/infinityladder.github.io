@@ -1,0 +1,10 @@
+title: Infinity Ladder Technologies
+description: Software development and consulting for HRIS, analytics, and scalable systems.
+url: https://www.infinityladdertechnologies.com
+baseurl: ""
+permalink: /posts/:title/
+excerpt_separator: "<!--more-->"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed

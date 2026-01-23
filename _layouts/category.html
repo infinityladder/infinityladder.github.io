@@ -1,24 +1,25 @@
 ---
 layout: default
-title: Posts
-description: Insights on HRIS, analytics, and modern software delivery.
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: /posts/page/:num/
 ---
-{% assign posts_list = paginator.posts | default: site.posts %}
+{% assign category_posts = site.categories[page.category] %}
 <div class="container post-layout">
   <article class="post-article">
     <header class="post-hero">
-      <p class="eyebrow">Company blog</p>
-      <h1>Perspectives on systems, data, and people operations.</h1>
-      <p class="post-meta">Short reads that share how we approach modern HRIS and analytics.</p>
+      <p class="eyebrow">Category</p>
+      <h1>{{ page.title | default: page.category }}</h1>
+      <p class="post-meta">
+        {% if category_posts %}
+        <span>{{ category_posts | size }} post{% if category_posts.size != 1 %}s{% endif %}</span>
+        {% else %}
+        <span>No posts yet</span>
+        {% endif %}
+      </p>
     </header>
 
     <div class="post-body">
+      {% if category_posts %}
       <div class="post-grid list">
-        {% for post in posts_list %}
+        {% for post in category_posts %}
         <article class="post-card">
           <div class="post-card-link">
             {% if post.featured_image %}
@@ -31,10 +32,7 @@ pagination:
             <div class="post-card-body">
               <p class="post-date">{{ post.date | date: "%b %d, %Y" }}</p>
               {% if post.category %}
-              {% assign category_slug = post.category | slugify %}
-              <a class="category-link" href="{{ '/categories/' | append: category_slug | append: '/' | relative_url }}">
-                {{ post.category }}
-              </a>
+              <span class="category-pill">{{ post.category }}</span>
               {% endif %}
               <h3>
                 <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -52,20 +50,8 @@ pagination:
         </article>
         {% endfor %}
       </div>
-      {% if paginator and paginator.total_pages > 1 %}
-      <nav class="pagination" aria-label="Posts">
-        {% if paginator.previous_page %}
-        <a class="pagination-link" href="{{ paginator.previous_page_path | relative_url }}">Newer</a>
-        {% else %}
-        <span class="pagination-link disabled">Newer</span>
-        {% endif %}
-        <span class="pagination-status">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-        {% if paginator.next_page %}
-        <a class="pagination-link" href="{{ paginator.next_page_path | relative_url }}">Older</a>
-        {% else %}
-        <span class="pagination-link disabled">Older</span>
-        {% endif %}
-      </nav>
+      {% else %}
+      <p>No posts yet for this category.</p>
       {% endif %}
     </div>
   </article>

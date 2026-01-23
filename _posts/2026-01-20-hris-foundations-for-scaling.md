@@ -3,8 +3,9 @@ layout: post
 title: HRIS foundations for scaling people operations
 description: A practical framework for stabilizing HRIS data, integrations, and reporting as teams grow.
 date: 2026-01-20 09:00:00 +0200
+category: HRIS
+published: false
 tags:
-  - HRIS
   - Data
   - Operations
 featured_image: /images/post-hris-foundations.svg

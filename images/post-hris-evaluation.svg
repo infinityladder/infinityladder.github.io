@@ -1,0 +1,55 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HRIS evaluation checklist and secure data flow">
+  <defs>
+    <linearGradient id="bg-eval" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1724"/>
+      <stop offset="55%" stop-color="#1c2f4f"/>
+      <stop offset="100%" stop-color="#0f6b6b"/>
+    </linearGradient>
+    <linearGradient id="accent-eval" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#6ff0e8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6ff0e8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg-eval)"/>
+
+  <circle cx="190" cy="170" r="120" fill="rgba(111, 240, 232, 0.18)"/>
+  <circle cx="980" cy="140" r="150" fill="rgba(111, 240, 232, 0.12)"/>
+  <circle cx="860" cy="530" r="190" fill="rgba(69, 212, 200, 0.12)"/>
+
+  <rect x="160" y="210" width="360" height="360" rx="28" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2"/>
+  <rect x="200" y="260" width="280" height="40" rx="12" fill="rgba(255, 255, 255, 0.12)"/>
+  <rect x="200" y="325" width="280" height="40" rx="12" fill="rgba(255, 255, 255, 0.12)"/>
+  <rect x="200" y="390" width="280" height="40" rx="12" fill="rgba(255, 255, 255, 0.12)"/>
+  <rect x="200" y="455" width="280" height="40" rx="12" fill="rgba(255, 255, 255, 0.12)"/>
+
+  <circle cx="225" cy="280" r="14" fill="#6ff0e8"/>
+  <path d="M218 280 L224 286 L234 272" stroke="#0f1724" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="225" cy="345" r="14" fill="#6ff0e8"/>
+  <path d="M218 345 L224 351 L234 337" stroke="#0f1724" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="225" cy="410" r="14" fill="#6ff0e8"/>
+  <path d="M218 410 L224 416 L234 402" stroke="#0f1724" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="225" cy="475" r="14" fill="#6ff0e8"/>
+  <path d="M218 475 L224 481 L234 467" stroke="#0f1724" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M770 260 C770 220, 820 200, 860 220 C900 200, 950 220, 950 260 C950 330, 860 370, 860 370 C860 370, 770 330, 770 260 Z" fill="rgba(255, 255, 255, 0.12)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+  <circle cx="860" cy="265" r="32" fill="rgba(111, 240, 232, 0.9)"/>
+  <rect x="846" y="250" width="28" height="28" rx="6" fill="#0f1724"/>
+  <path d="M860 255 L860 270" stroke="#6ff0e8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="860" cy="282" r="4" fill="#6ff0e8"/>
+
+  <rect x="650" y="410" width="420" height="120" rx="26" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2"/>
+  <circle cx="700" cy="470" r="20" fill="rgba(111, 240, 232, 0.8)"/>
+  <circle cx="820" cy="470" r="20" fill="rgba(111, 240, 232, 0.8)"/>
+  <circle cx="940" cy="470" r="20" fill="rgba(111, 240, 232, 0.8)"/>
+  <path d="M720 470 L800 470" stroke="rgba(255, 255, 255, 0.4)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M840 470 L920 470" stroke="rgba(255, 255, 255, 0.4)" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M520 330 C620 320, 700 300, 780 300" stroke="rgba(111, 240, 232, 0.55)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M520 430 C650 450, 700 450, 860 470" stroke="rgba(255, 255, 255, 0.25)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <path d="M0 610 L1200 500" stroke="url(#accent-eval)" stroke-width="120" opacity="0.18"/>
+  <circle cx="1030" cy="560" r="80" fill="rgba(111, 240, 232, 0.12)" filter="url(#soft)"/>
+</svg>

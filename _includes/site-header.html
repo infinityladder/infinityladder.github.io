@@ -1,6 +1,9 @@
 <header class="site-header">
   <div class="container nav-row">
-    <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="logo" href="{{ '/' | relative_url }}">
+      <img class="logo-mark" src="{{ '/images/logo/logo.png' | relative_url }}" alt="{{ site.title }} logo">
+      <span class="logo-wordmark">{{ site.title }}</span>
+    </a>
     <nav class="nav">
       <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
       <a class="nav-link {% if page.url contains '/about' %}active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>

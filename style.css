@@ -190,6 +190,48 @@ h1 {
   gap: 18px;
 }
 
+.pill-list {
+  list-style: none;
+  margin: 12px 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.pill-list li {
+  background: rgba(28, 109, 208, 0.08);
+  border: 1px solid rgba(28, 109, 208, 0.12);
+  border-radius: 14px;
+  padding: 8px 10px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.approach {
+  padding: 20px 0 80px;
+  display: grid;
+  gap: 24px;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
 .card {
   background: var(--card);
   border-radius: 20px;

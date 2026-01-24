@@ -6,6 +6,7 @@
     </a>
     <nav class="nav">
       <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+      <a class="nav-link {% if page.url contains '/services' %}active{% endif %}" href="{{ '/services/' | relative_url }}">Services</a>
       <a class="nav-link {% if page.url contains '/about' %}active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
       <a class="nav-link {% if page.layout == 'post' or page.url contains '/posts' %}active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
     </nav>

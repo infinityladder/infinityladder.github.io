@@ -751,6 +751,16 @@ h1 {
     align-items: flex-start;
   }
 
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+
   .logo {
     padding: 2px 0;
   }

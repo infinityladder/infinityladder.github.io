@@ -58,18 +58,18 @@ function Save-Icon {
   $iconBitmap.Dispose()
 }
 
-$sourcePath = "images/logo/logo.png"
+$sourcePath = "images/site/logo/logo.png"
 $source = [System.Drawing.Image]::FromFile($sourcePath)
 
 $targets = @(
-  @{ Size = 512; Path = "images/favicon.png" },
-  @{ Size = 180; Path = "images/apple-touch-icon.png" },
-  @{ Size = 32; Path = "images/favicon-32x32.png" },
-  @{ Size = 16; Path = "images/favicon-16x16.png" },
-  @{ Size = 512; Path = "_site/images/favicon.png" },
-  @{ Size = 180; Path = "_site/images/apple-touch-icon.png" },
-  @{ Size = 32; Path = "_site/images/favicon-32x32.png" },
-  @{ Size = 16; Path = "_site/images/favicon-16x16.png" }
+  @{ Size = 512; Path = "images/site/favicon.png" },
+  @{ Size = 180; Path = "images/site/apple-touch-icon.png" },
+  @{ Size = 32; Path = "images/site/favicon-32x32.png" },
+  @{ Size = 16; Path = "images/site/favicon-16x16.png" },
+  @{ Size = 512; Path = "_site/images/site/favicon.png" },
+  @{ Size = 180; Path = "_site/images/site/apple-touch-icon.png" },
+  @{ Size = 32; Path = "_site/images/site/favicon-32x32.png" },
+  @{ Size = 16; Path = "_site/images/site/favicon-16x16.png" }
 )
 
 foreach ($target in $targets) {

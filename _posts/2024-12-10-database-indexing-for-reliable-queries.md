@@ -9,7 +9,7 @@ tags:
   - Databases
   - Performance
   - Operations
-featured_image: /images/post-database-indexing.svg
+featured_image: /images/posts/post-database-indexing.svg
 featured_alt: Abstract diagram of database tables and index paths.
 ---
 Indexes are the fastest way to make a database feel responsive, but they are also a common source of

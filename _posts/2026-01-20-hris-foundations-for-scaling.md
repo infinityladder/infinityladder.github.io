@@ -8,7 +8,7 @@ published: false
 tags:
   - Data
   - Operations
-featured_image: /images/post-hris-foundations.svg
+featured_image: /images/posts/post-hris-foundations.svg
 featured_alt: Abstract visualization of connected systems and data flow.
 ---
 When growth arrives, HRIS environments that once felt lightweight can suddenly become the operational

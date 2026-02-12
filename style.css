@@ -156,6 +156,19 @@ h1 {
   display: block;
 }
 
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.store-actions .button {
+  height: 44px;
+  padding: 0 18px;
+}
+
 .product-hero {
   display: grid;
   grid-template-columns: auto 1fr;

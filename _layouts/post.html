@@ -24,7 +24,10 @@ layout: default
       </p>
       {% if page.featured_image %}
       <div class="post-featured">
-        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.featured_alt | default: page.title }}">
+        <img
+          {% if page.featured_image_fit %}class="image-fit-{{ page.featured_image_fit }}"{% endif %}
+          src="{{ page.featured_image | relative_url }}"
+          alt="{{ page.featured_alt | default: page.title }}">
       </div>
       {% endif %}
     </header>
@@ -41,7 +44,10 @@ layout: default
         {% for post in site.posts limit:3 %}
         <a class="recent-card" href="{{ post.url | relative_url }}">
           {% if post.featured_image %}
-          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.featured_alt | default: post.title }}">
+          <img
+            {% if post.featured_image_fit %}class="image-fit-{{ post.featured_image_fit }}"{% endif %}
+            src="{{ post.featured_image | relative_url }}"
+            alt="{{ post.featured_alt | default: post.title }}">
           {% endif %}
           <div>
             <p class="recent-title">{{ post.title }}</p>

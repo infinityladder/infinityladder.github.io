@@ -24,7 +24,10 @@ pagination:
             {% if post.featured_image %}
             <a class="post-card-image-link" href="{{ post.url | relative_url }}">
               <div class="post-card-image">
-                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.featured_alt | default: post.title }}">
+                <img
+                  {% if post.featured_image_fit %}class="image-fit-{{ post.featured_image_fit }}"{% endif %}
+                  src="{{ post.featured_image | relative_url }}"
+                  alt="{{ post.featured_alt | default: post.title }}">
               </div>
             </a>
             {% endif %}
@@ -77,7 +80,10 @@ pagination:
         {% for post in site.posts limit:3 %}
         <a class="recent-card" href="{{ post.url | relative_url }}">
           {% if post.featured_image %}
-          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.featured_alt | default: post.title }}">
+          <img
+            {% if post.featured_image_fit %}class="image-fit-{{ post.featured_image_fit }}"{% endif %}
+            src="{{ post.featured_image | relative_url }}"
+            alt="{{ post.featured_alt | default: post.title }}">
           {% endif %}
           <div>
             <p class="recent-title">{{ post.title }}</p>

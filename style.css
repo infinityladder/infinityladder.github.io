@@ -687,6 +687,11 @@ h1 {
   display: block;
 }
 
+.post-featured img.image-fit-contain {
+  object-fit: contain;
+  background: #eef4f8;
+}
+
 .post-body {
   margin-top: 24px;
   display: grid;
@@ -751,6 +756,13 @@ h1 {
   height: 68px;
   border-radius: 12px;
   object-fit: cover;
+}
+
+.post-card-image img.image-fit-contain,
+.recent-card img.image-fit-contain {
+  object-fit: contain;
+  background: #eef4f8;
+  padding: 6px;
 }
 
 .recent-title {

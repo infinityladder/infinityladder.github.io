@@ -9,9 +9,8 @@ tags:
   - Mobile Apps
   - Fitness
   - Productivity
-featured_image: /images/posts/complete-interval-timer-launch/app-icon-512.png
-featured_alt: Complete Interval Timer app icon.
-featured_image_fit: contain
+featured_image: /images/posts/post-complete-interval-timer-launch-v2.svg
+featured_alt: Complete Interval Timer launch feature graphic with app icon.
 ---
 Complete Interval Timer (CITimer) is now live on Google Play. It is built for workouts, study sprints, and rehab routines where you need clear guidance without extra setup.
 
@@ -20,6 +19,7 @@ Complete Interval Timer (CITimer) is now live on Google Play. It is built for wo
 You can create unlimited presets with prepare, work, and rest intervals, plus optional mid-set switch cues for movements like left and right side work. Sessions include voice announcements, beep cues, favorites for one-tap starts, and import/export support using JSON.
 
 <div class="store-actions">
+  <img src="{{ '/images/posts/complete-interval-timer-launch/app-icon-512.png' | relative_url }}" alt="Complete Interval Timer app icon" style="width: 44px; height: 44px; border-radius: 10px; display: block;">
   <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.malingaperera.interval_timer" target="_blank" rel="noopener">
     <img src="{{ '/images/site/GetItOnGooglePlay_Badge_Web_color_English.png' | relative_url }}" alt="Get it on Google Play">
   </a>

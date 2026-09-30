@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Glitchoku is now on Google Play
-description: Glitchoku is a free, offline sudoku game for Android with three ways to play, four honest difficulty tiers, and no ads, accounts or data collection.
+description: Glitchoku is an offline sudoku game for Android with three ways to play, four honest difficulty tiers, and no ads, accounts or data collection.
 date: 2026-09-30 09:00:00 +0000
 published: true
 category: Mobile Apps
@@ -21,7 +21,7 @@ Glitchoku changes that. It is our new sudoku game for Android, and it is out now
 
 The tagline says it plainly: **Sudoku that gets your heart pounding.**
 
-It is free, it works fully offline, and it has no ads, no sign-up and no paywall.
+It works fully offline, and it has no ads and no sign-up.
 
 <div class="store-actions">
   <img src="{{ '/images/products/glitchoku/glitchoku-app-icon-512.png' | relative_url }}" alt="Glitchoku app icon" style="width: 44px; height: 44px; border-radius: 10px; display: block;">
@@ -121,7 +121,7 @@ We wanted Glitchoku to be the sudoku game we would want on our own phones:
 
 - **100% offline.** It needs no internet connection, so you can play on a plane, underground, or anywhere without signal.
 - **No ads.** Not one.
-- **No account.** No login and no subscription.
+- **No account.** No sign-up and no login.
 - **No data collected.** Your progress, scores and settings are stored only on your device. The game doesn't send data to us and uses no third-party analytics, advertising or tracking services. Our [privacy policy]({{ '/products/glitchoku/privacy/' | relative_url }}) explains the details.
 - **Comfortable to play.** It has dark and light modes, high-contrast palettes and reduce-motion support, and works on phones and tablets in portrait or landscape.
 
@@ -129,7 +129,7 @@ We wanted Glitchoku to be the sudoku game we would want on our own phones:
 
 Whether you want a calm puzzle before bed, a five-minute brain workout on your commute, or a truly hard board that punishes one careless guess, Glitchoku has a mode for it.
 
-It is free on Google Play now: **[Get Glitchoku on Google Play](https://play.google.com/store/apps/details?id=com.glitchoku.app)**.
+It is on Google Play now: **[Get Glitchoku on Google Play](https://play.google.com/store/apps/details?id=com.glitchoku.app)**.
 
 Nine digits. One grid. No excuses.
 

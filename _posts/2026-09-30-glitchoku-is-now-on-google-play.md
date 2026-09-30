@@ -10,8 +10,11 @@ tags:
   - Games
   - Puzzles
 featured_image: /images/posts/glitchoku-launch/glitchoku-feature-graphic.jpeg
-featured_alt: Glitchoku feature graphic. Two phones show sudoku boards in the game's dark green and light themes, one of them a Blitz run on Hard, beside the title Glitchoku, the tagline "Sudoku that gets your heart pounding." and the words No ads, Offline, No sign-up.
+featured_alt: Glitchoku feature graphic. Two phones show sudoku boards in the game's dark green and light themes, one of them a Blitz run on Hard, beside the title Glitchoku, the tagline 'Sudoku that gets your heart pounding.' and the words No ads, Offline, No sign-up.
 featured_caption: Glitchoku. Sudoku that gets your heart pounding.
+image:
+  path: /images/posts/glitchoku-launch/glitchoku-feature-graphic.jpeg
+  alt: Glitchoku feature graphic. Two phones show sudoku boards in the game's dark green and light themes, one of them a Blitz run on Hard, beside the title Glitchoku, the tagline 'Sudoku that gets your heart pounding.' and the words No ads, Offline, No sign-up.
 ---
 Sudoku is one of the best puzzles ever made. It is also usually very patient with you. Nothing happens if you stare at the same row for ten minutes, and nothing is lost if you wander off to make tea.
 

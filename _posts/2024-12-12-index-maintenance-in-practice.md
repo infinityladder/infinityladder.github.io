@@ -11,6 +11,9 @@ tags:
   - Operations
 featured_image: /images/posts/post-database-indexing.svg
 featured_alt: Abstract diagram of database tables and index paths.
+image:
+  path: /images/posts/post-database-indexing.jpeg
+  alt: Abstract diagram of database tables and index paths.
 ---
 Index maintenance is the difference between a system that stays fast and one that slows down after
 every release. The best strategy is simple, predictable, and tied to real query behavior.

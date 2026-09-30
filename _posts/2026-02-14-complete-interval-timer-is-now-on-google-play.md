@@ -11,6 +11,9 @@ tags:
   - Productivity
 featured_image: /images/posts/post-complete-interval-timer-launch-v2.svg
 featured_alt: Complete Interval Timer launch feature graphic with app icon.
+image:
+  path: /images/posts/post-complete-interval-timer-launch-v2.jpeg
+  alt: Complete Interval Timer launch feature graphic with app icon.
 ---
 Complete Interval Timer (CITimer) is now live on Google Play. It is built for workouts, study sprints, and rehab routines where you need clear guidance without extra setup.
 

@@ -11,6 +11,9 @@ tags:
   - Operations
 featured_image: /images/posts/post-database-indexing.svg
 featured_alt: Abstract diagram of database tables and index paths.
+image:
+  path: /images/posts/post-database-indexing.jpeg
+  alt: Abstract diagram of database tables and index paths.
 ---
 Indexes are the fastest way to make a database feel responsive, but they are also a common source of
 slow writes and operational surprises. The goal is not to index everything, but to be intentional

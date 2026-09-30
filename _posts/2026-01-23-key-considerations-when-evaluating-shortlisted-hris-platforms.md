@@ -10,6 +10,9 @@ tags:
   - Data
 featured_image: /images/posts/post-hris-evaluation.svg
 featured_alt: Abstract checklist and secure data flow for HRIS evaluation.
+image:
+  path: /images/posts/post-hris-evaluation.jpeg
+  alt: Abstract checklist and secure data flow for HRIS evaluation.
 ---
 Selecting a Human Resource Information System (HRIS) is one of the most critical decisions an
 organisation makes in its digital HR journey. Beyond features and vendor demos, the right HRIS must

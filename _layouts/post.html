@@ -28,6 +28,9 @@ layout: default
           {% if page.featured_image_fit %}class="image-fit-{{ page.featured_image_fit }}"{% endif %}
           src="{{ page.featured_image | relative_url }}"
           alt="{{ page.featured_alt | default: page.title }}">
+        {% if page.featured_caption %}
+        <p class="post-featured-caption">{{ page.featured_caption }}</p>
+        {% endif %}
       </div>
       {% endif %}
     </header>

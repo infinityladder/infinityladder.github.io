@@ -738,6 +738,19 @@ h1 {
   background: #eef4f8;
 }
 
+.post-featured-caption {
+  margin: 0;
+  padding: 10px 14px 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.post-body .post-shot {
+  width: 100%;
+  max-width: 300px;
+  margin: 6px auto;
+}
+
 .post-body {
   margin-top: 24px;
   display: grid;

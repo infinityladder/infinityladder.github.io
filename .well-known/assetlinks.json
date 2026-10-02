@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.glitchoku.app",
+      "sha256_cert_fingerprints": [
+        "52:C1:EC:A2:EE:EA:DB:53:EB:CF:47:5F:F6:72:31:37:3D:5C:03:E5:4C:D9:D9:CB:3D:47:6F:13:42:E1:31:86"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.glitchoku.app.dev",
+      "sha256_cert_fingerprints": [
+        "BA:DA:B8:9E:D6:58:A5:76:09:07:16:29:07:2C:B4:17:FC:DE:75:92:39:A1:A0:7B:01:9D:7A:56:78:30:0F:90"
+      ]
+    }
+  }
+]

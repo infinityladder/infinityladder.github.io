@@ -1,0 +1,137 @@
+---
+layout: default
+title: Glitchoku challenge
+description: Someone sent you a Glitchoku board. Play the same sudoku, under the same rules, and try to beat their run.
+permalink: /g/
+sitemap: false
+image:
+  path: /images/posts/glitchoku-launch/glitchoku-feature-graphic.jpeg
+  alt: Glitchoku feature graphic. Two phones show sudoku boards beside the title Glitchoku and the tagline 'Sudoku that gets your heart pounding.'
+---
+{% comment %}
+  Where a Glitchoku challenge link lands when the app does not open it.
+
+  Links look like /g/?c=CODE. On a phone with Glitchoku installed, Android opens the app
+  straight away (verified through /.well-known/assetlinks.json), so this page is only seen
+  without the app, or inside an in-app browser that does not hand links to apps.
+
+  The code is read here only to show the run to beat. The format is ChallengeCode in the app:
+  Crockford base32 over 20 bytes -- version, mode/tier/failed, seed (8), score (4),
+  seconds (3), misses, percent, checksum. Keep the two in step.
+{% endcomment %}
+<style>
+  /* .button and .card set display, which would otherwise override the hidden attribute. */
+  #open-app[hidden], #challenge-card[hidden] { display: none; }
+</style>
+<div class="container">
+  <section class="hero compact-hero">
+    <p class="eyebrow">Glitchoku challenge</p>
+    <div class="product-hero">
+      <img class="product-icon" src="{{ '/images/products/glitchoku/glitchoku-app-icon-512.png' | relative_url }}" alt="Glitchoku app icon">
+      <div>
+        <h1 id="challenge-title">You've been sent a board</h1>
+        <p class="lead" id="challenge-lead">
+          Someone played a Glitchoku sudoku and wants to see if you can beat them. You get the exact same
+          board, under the same rules.
+        </p>
+      </div>
+    </div>
+
+    <div class="card feature-card" id="challenge-card" hidden>
+      <ul class="feature-list" id="challenge-stats"></ul>
+    </div>
+
+    <div class="store-actions" id="challenge-actions">
+      <a class="button" id="open-app" href="#" hidden>Open in Glitchoku</a>
+      <a class="store-badge" id="get-app" href="https://play.google.com/store/apps/details?id=com.glitchoku.app" target="_blank" rel="noopener">
+        <img src="{{ '/images/site/GetItOnGooglePlay_Badge_Web_color_English.png' | relative_url }}" alt="Get it on Google Play">
+      </a>
+    </div>
+    <p id="challenge-note">
+      Install Glitchoku from Google Play, then tap the link you were sent again to open the board.
+    </p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+  var MODES = ["Blitz", "Overclock", "Sudoku", "PowerUp"];
+  var TIERS = ["Easy", "Medium", "Hard", "Expert"];
+  var PLAY = "https://play.google.com/store/apps/details?id=com.glitchoku.app";
+
+  function decode(text) {
+    var clean = text.toUpperCase().replace(/[-\s]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1");
+    var bytes = [], buffer = 0, bits = 0;
+    for (var i = 0; i < clean.length; i++) {
+      var v = ALPHABET.indexOf(clean.charAt(i));
+      if (v < 0) return null;
+      buffer = (buffer << 5) | v; bits += 5;
+      if (bits >= 8) { bytes.push((buffer >> (bits - 8)) & 0xFF); bits -= 8; }
+      buffer &= (1 << bits) - 1;
+    }
+    if (bytes.length !== 20) return null;
+    var sum = 0;
+    for (var j = 0; j < 19; j++) sum = (sum * 31 + bytes[j]) & 0xFF;
+    if (sum !== bytes[19] || bytes[0] !== 1) return null;
+    var mode = MODES[bytes[1] & 0x0F], tier = TIERS[(bytes[1] >> 4) & 0x03];
+    if (!mode) return null;
+    return {
+      mode: mode,
+      tier: tier,
+      failed: (bytes[1] & 0x40) !== 0,
+      score: ((bytes[10] << 24) | (bytes[11] << 16) | (bytes[12] << 8) | bytes[13]),
+      seconds: (bytes[14] << 16) | (bytes[15] << 8) | bytes[16],
+      misses: bytes[17],
+      percent: bytes[18]
+    };
+  }
+
+  function clock(s) {
+    var m = Math.floor(s / 60), r = s % 60;
+    return (m < 10 ? "0" : "") + m + ":" + (r < 10 ? "0" : "") + r;
+  }
+
+  function li(label, value) {
+    var item = document.createElement("li");
+    var strong = document.createElement("strong");
+    strong.textContent = value;
+    item.appendChild(document.createTextNode(label + ": "));
+    item.appendChild(strong);
+    return item;
+  }
+
+  var code = new URLSearchParams(window.location.search).get("c");
+  if (!code) return;
+
+  // Google Play hands the referrer to the app after install, so the board can open on first launch.
+  var play = PLAY + "&referrer=" + encodeURIComponent("c=" + code);
+  document.getElementById("get-app").href = play;
+
+  // An in-app browser (Facebook, Messenger, Instagram) often keeps https links to itself. An
+  // intent: link asks Android for the app by name, and falls back to Play if it is not there.
+  if (/Android/i.test(navigator.userAgent)) {
+    var open = document.getElementById("open-app");
+    open.href = "intent://" + window.location.host + "/g/?c=" + encodeURIComponent(code) +
+      "#Intent;scheme=https;package=com.glitchoku.app;S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
+    open.hidden = false;
+    document.getElementById("challenge-note").textContent =
+      "Already have Glitchoku? Tap Open in Glitchoku. If not, get it from Google Play, then come back and tap the link you were sent.";
+  }
+
+  var run = decode(code);
+  if (!run) return;
+  var title = run.tier + " " + run.mode;
+  document.getElementById("challenge-title").textContent = run.failed
+    ? "Can you get further on this " + title + " board?"
+    : "Can you beat this " + title + " run?";
+  document.getElementById("challenge-lead").textContent =
+    "Someone played this board in Glitchoku and sent it to you. You get the exact same sudoku, under the same rules.";
+  var stats = document.getElementById("challenge-stats");
+  if (run.failed) stats.appendChild(li("Board filled", run.percent + "%"));
+  if (run.mode !== "Sudoku") stats.appendChild(li("Score to beat", run.score.toLocaleString("en-US")));
+  stats.appendChild(li("Time", clock(run.seconds)));
+  stats.appendChild(li("Misses", String(run.misses)));
+  document.getElementById("challenge-card").hidden = false;
+})();
+</script>

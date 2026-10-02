@@ -9,3 +9,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate-v2
+# Jekyll skips dot-folders. .well-known/assetlinks.json is how Android verifies that Glitchoku
+# may open www.infinityladdertechnologies.com/g/ challenge links.
+include:
+  - .well-known

@@ -48,7 +48,8 @@ image:
       </a>
     </div>
     <p id="challenge-note">
-      Install Glitchoku from Google Play, then tap the link you were sent again to open the board.
+      Install Glitchoku from Google Play. The board opens the first time you start the game; if it
+      doesn't, tap the link you were sent again.
     </p>
   </section>
 </div>
@@ -116,7 +117,7 @@ image:
       "#Intent;scheme=https;package=com.glitchoku.app;S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
     open.hidden = false;
     document.getElementById("challenge-note").textContent =
-      "Already have Glitchoku? Tap Open in Glitchoku. If not, get it from Google Play, then come back and tap the link you were sent.";
+      "Already have Glitchoku? Tap Open in Glitchoku. If not, get it from Google Play: the board opens the first time you start the game. If it doesn't, tap the link you were sent again.";
   }
 
   var run = decode(code);

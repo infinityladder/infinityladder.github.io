@@ -25,7 +25,7 @@ image:
 </style>
 <div class="container">
   <section class="hero compact-hero">
-    <p class="eyebrow">Glitchoku challenge</p>
+    <p class="eyebrow" id="challenge-eyebrow">Glitchoku challenge</p>
     <div class="product-hero">
       <img class="product-icon" src="{{ '/images/products/glitchoku/glitchoku-app-icon-512.png' | relative_url }}" alt="Glitchoku app icon">
       <div>
@@ -102,22 +102,29 @@ image:
     return item;
   }
 
-  var code = new URLSearchParams(window.location.search).get("c");
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get("c");
   if (!code) return;
+  // The sender's name, cleaned the way the app cleans one: letters in any script with their
+  // marks, digits, spaces and _ - . only. It is only ever written with textContent.
+  var name = (params.get("n") || "").replace(/[^\p{L}\p{M}\p{N} _.\-\u200C\u200D]/gu, "")
+    .replace(/ +/g, " ").trim().slice(0, 20).trim();
+  if (name.length < 2) name = "";
+  var carried = "c=" + code + (name ? "&n=" + encodeURIComponent(name) : "");
 
   // Google Play hands the referrer to the app after install, so the board can open on first launch.
-  var play = PLAY + "&referrer=" + encodeURIComponent("c=" + code);
+  var play = PLAY + "&referrer=" + encodeURIComponent(carried);
   document.getElementById("get-app").href = play;
 
   // An in-app browser (Facebook, Messenger, Instagram) often keeps https links to itself. An
   // intent: link asks Android for the app by name, and falls back to Play if it is not there.
   if (/Android/i.test(navigator.userAgent)) {
     var open = document.getElementById("open-app");
-    open.href = "intent://" + window.location.host + "/g/?c=" + encodeURIComponent(code) +
+    open.href = "intent://" + window.location.host + "/g/?" + carried +
       "#Intent;scheme=https;package=com.glitchoku.app;S.browser_fallback_url=" + encodeURIComponent(play) + ";end";
     open.hidden = false;
     document.getElementById("challenge-note").textContent =
-      "Already have Glitchoku? Tap Open in Glitchoku. If not, get it from Google Play: the board opens the first time you start the game. If it doesn't, tap the link you were sent again.";
+      "Already have Glitchoku? Tap Open in Glitchoku, and update it if Google Play offers one. If not, get it from Google Play: the board opens the first time you start the game. If it doesn't, tap the link you were sent again.";
   }
 
   var run = decode(code);
@@ -127,7 +134,8 @@ image:
     ? "Can you get further on this " + title + " board?"
     : "Can you beat this " + title + " run?";
   document.getElementById("challenge-lead").textContent =
-    "Someone played this board in Glitchoku and sent it to you. You get the exact same sudoku, under the same rules.";
+    (name || "Someone") + " played this board in Glitchoku and sent it to you. You get the exact same sudoku, under the same rules.";
+  if (name) document.getElementById("challenge-eyebrow").textContent = "Challenge from " + name;
   var stats = document.getElementById("challenge-stats");
   if (run.failed) stats.appendChild(li("Board filled", run.percent + "%"));
   if (run.mode !== "Sudoku") stats.appendChild(li("Score to beat", run.score.toLocaleString("en-US")));

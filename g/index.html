@@ -18,6 +18,8 @@ image:
   The code is read here only to show the run to beat. The format is ChallengeCode in the app:
   Crockford base32 over 20 bytes -- version, mode/tier/failed, seed (8), score (4),
   seconds (3), misses, percent, checksum. Keep the two in step.
+  Mode 4 is One Shot: one lit cell to answer. Its score is the stars (0-3) and its time is in
+  tenths of a second, since its boards take seconds.
 {% endcomment %}
 <style>
   /* .button and .card set display, which would otherwise override the hidden attribute. */
@@ -57,7 +59,7 @@ image:
 <script>
 (function () {
   var ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
-  var MODES = ["Blitz", "Overclock", "Sudoku", "PowerUp"];
+  var MODES = ["Blitz", "Overclock", "Sudoku", "PowerUp", "One Shot"];
   var TIERS = ["Easy", "Medium", "Hard", "Expert"];
   var PLAY = "https://play.google.com/store/apps/details?id=com.glitchoku.app";
 
@@ -130,6 +132,24 @@ image:
   var run = decode(code);
   if (!run) return;
   var title = run.tier + " " + run.mode;
+  if (run.mode === "One Shot") {
+    document.getElementById("challenge-title").textContent = run.failed
+      ? "Can you get this " + title + " board?"
+      : "Can you beat this " + title + " time?";
+    document.getElementById("challenge-lead").textContent =
+      (name || "Someone") + " played this board in Glitchoku and sent it to you. One cell is lit, and the board holds just enough to know it. You get the exact same board.";
+    if (name) document.getElementById("challenge-eyebrow").textContent = "Challenge from " + name;
+    var shot = document.getElementById("challenge-stats");
+    if (run.failed) {
+      shot.appendChild(li("Result", "Missed"));
+    } else {
+      shot.appendChild(li("Time to beat", (run.seconds / 10).toFixed(1) + " s"));
+      var stars = Math.max(0, Math.min(3, run.score));
+      shot.appendChild(li("Stars", "★★★".slice(0, stars) + "☆☆☆".slice(0, 3 - stars)));
+    }
+    document.getElementById("challenge-card").hidden = false;
+    return;
+  }
   document.getElementById("challenge-title").textContent = run.failed
     ? "Can you get further on this " + title + " board?"
     : "Can you beat this " + title + " run?";
